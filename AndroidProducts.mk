@@ -1,13 +1,13 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2022 The aospOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_cannon.mk
+    $(LOCAL_DIR)/aosp_cannon.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_cannon-user \
-    lineage_cannon-userdebug \
-    lineage_cannon-eng
+    aosp_cannon-user \
+    aosp_cannon-userdebug \
+    aosp_cannon-eng
