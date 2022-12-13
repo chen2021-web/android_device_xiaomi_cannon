@@ -49,8 +49,6 @@ vendor/lib/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/libmiStereoFactoryRemapLib.so
 
 # Audio configs
-vendor/etc/aurisys_config.xml
-vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/apdb/APDB_MT6853_S01__W2145
 vendor/etc/apdb/APDB_MT6853_S01__W2145_ENUM
 vendor/etc/audio_param/AudioParamOptions.xml
@@ -169,6 +167,8 @@ vendor/etc/audio_param/Volume_ParamUnitDesc.xml
 vendor/etc/aurisys_param/AW_DSP.bin
 vendor/etc/aurisys_param/FV-SAM-MTKXX.dat
 vendor/etc/aurisys_param/Speech_AudioParam.xml
+vendor/etc/aurisys_config.xml
+vendor/etc/aurisys_config_hifi3.xml
 
 # AEE
 vendor/lib/libaedv.so
@@ -204,8 +204,8 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Bluetooth (AptX)
-lib64/libaptXHD_encoder.so:system_ext/lib64/libaptXHD_encoder.so
-lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so
+system/lib64/libaptXHD_encoder.so:system_ext/lib64/libaptXHD_encoder.so
+system/lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so
 
 # Camera
 vendor/bin/hw/camerahalserver
@@ -752,16 +752,6 @@ vendor/firmware/soc2_0_ram_wifi_3d_1_hdr.bin
 vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
 
-# CIT
-vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
-vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
-vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1.so
-vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
-
 # ConsumerIr
 vendor/lib64/hw/consumerir.common.so
 
@@ -782,9 +772,9 @@ vendor/lib/egl/libMEOW_data.so
 vendor/lib/egl/libMEOW_gift.so
 vendor/lib/egl/libMEOW_qt.so
 vendor/lib/egl/libMEOW_trace.so
+vendor/lib/hw/memtrack.default.so:vendor/lib/hw/memtrack.mt6853.so
 vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib/hw/memtrack.default.so:vendor/lib/hw/memtrack.mt6853.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib/hw/vulkan.mali.so
 vendor/lib/mt6853/libaiselector.so:vendor/lib/libaiselector.so
@@ -838,10 +828,10 @@ vendor/lib64/egl/libMEOW_data.so
 vendor/lib64/egl/libMEOW_gift.so
 vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so
+vendor/lib64/hw/memtrack.default.so:vendor/lib64/hw/memtrack.mt6853.so
 vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/hwcomposer.mt6853.so
-vendor/lib64/hw/memtrack.default.so:vendor/lib64/hw/memtrack.mt6853.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/mt6853/libaiselector.so:vendor/lib64/libaiselector.so
@@ -995,8 +985,8 @@ vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
 # Media
-lib64/libvcodec_cap.so
-lib64/libvcodec_capenc.so
+system/lib64/libvcodec_cap.so
+system/lib64/libvcodec_capenc.so
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
@@ -1090,14 +1080,14 @@ vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/libvideofilter_only.so
 
 # Media (Extractors)
-lib64/extractors/libmtkadpcmextractor.so
-lib64/extractors/libmtkalacextractor.so
-lib64/extractors/libmtkapeextractor.so
-lib64/extractors/libmtkasfextractor.so
-lib64/extractors/libmtkaviextractor.so
-lib64/extractors/libmtkflvextractor.so
-lib64/extractors/libmtkmp3extractor.so
-lib64/extractors/libmtkmpeg2extractor.so
+system/lib64/extractors/libmtkadpcmextractor.so
+system/lib64/extractors/libmtkalacextractor.so
+system/lib64/extractors/libmtkapeextractor.so
+system/lib64/extractors/libmtkasfextractor.so
+system/lib64/extractors/libmtkaviextractor.so
+system/lib64/extractors/libmtkflvextractor.so
+system/lib64/extractors/libmtkmp3extractor.so
+system/lib64/extractors/libmtkmpeg2extractor.so
 
 # Neural networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
@@ -1173,7 +1163,7 @@ vendor/lib64/libteeclientjni@1.1.so
 vendor/lib64/wechat.beanpod.so
 
 # Power
-lib64/libmtkperf_client.so
+system/lib64/libmtkperf_client.so
 vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/gbe
 vendor/etc/init/gbe.rc
@@ -1308,21 +1298,21 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/lib64/vendor.mediatek.hardware.nwk_opt@1.0.so
 
 # Radio (IMS)
-bin/vtservice
-etc/init/init.vtservice.rc
-lib64/libcomutils.so
-lib64/libimsma.so
-lib64/libimsma_adapt.so
-lib64/libimsma_rtp.so
-lib64/libimsma_socketwrapper.so
-lib64/libmtk_vt_service.so
-lib64/libmtk_vt_wrapper.so
-lib64/libmtkavenhancements.so
-lib64/libsignal.so
-lib64/libsink.so
-lib64/libsource.so
-lib64/libvt_avsync.so
--priv-app/ImsService/ImsService.apk
+-system/priv-app/ImsService/ImsService.apk
+system/bin/vtservice
+system/etc/init/init.vtservice.rc
+system/lib64/libcomutils.so
+system/lib64/libimsma.so
+system/lib64/libimsma_adapt.so
+system/lib64/libimsma_rtp.so
+system/lib64/libimsma_socketwrapper.so
+system/lib64/libmtk_vt_service.so
+system/lib64/libmtk_vt_wrapper.so
+system/lib64/libmtkavenhancements.so
+system/lib64/libsignal.so
+system/lib64/libsink.so
+system/lib64/libsource.so
+system/lib64/libvt_avsync.so
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/bin/hw/vtservice_hidl
@@ -1353,7 +1343,7 @@ vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 
 # FM Radio
--system_ext/lib64/libfmjni.so:lib64/libfmjni.so
+-system_ext/lib64/libfmjni.so:system/lib64/libfmjni.so
 vendor/etc/init/init.fmradio_drv.rc
 
 # Sensors
@@ -1363,9 +1353,6 @@ vendor/lib64/hw/sensors.touch.detect.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libksensor.so
 vendor/lib64/libsensor_custom.so
-
-# Sensors configs
-vendor/etc/sensors/hals.conf
 
 # Soter (Tencent)
 -vendor/app/SoterService/SoterService.apk:system_ext/app/SoterService/SoterService.apk
@@ -1485,9 +1472,9 @@ vendor/etc/init/mtk_agpsd_p.rc
 -vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
 vendor/etc/mpe.conf
 vendor/etc/slp_conf
+vendor/lib64/hw/gps.default.so:vendor/lib64/hw/gps.mt6853.so
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
-vendor/lib64/hw/gps.default.so:vendor/lib64/hw/gps.mt6853.so
 vendor/lib64/lbs_hidl_service-impl.so
 vendor/lib64/libDR.so
 vendor/lib64/libapmonitor_vendor.so
@@ -1519,21 +1506,44 @@ vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
 
 # Engineer Mode
+-system/app/LocationEM2/LocationEM2.apk
+system/lib/libaudio_param_parser-sys.so
+system/lib/libaudioutilmtk.so
+system/lib/libem_aoltest_jni.so
+system/lib/libem_support_jni.so
+system/lib/libem_usb_jni.so
+system/lib/libem_wifi_jni.so
+system/lib64/libaudio_param_parser-sys.so
+system/lib64/libaudioutilmtk.so
+system/lib64/libem_aoltest_jni.so
+system/lib64/libem_audio_jni.so
+system/lib64/libem_audio_jni.so
+system/lib64/libem_support_jni.so
+system/lib64/libem_usb_jni.so
+system/lib64/libem_wifi_jni.so
+-system/priv-app/EngineerMode/EngineerMode.apk
+-system/priv-app/YGPS/YGPS.apk
+system_ext/lib/libaudiotoolkit.so
+system_ext/lib64/libaudiotoolkit.so
+vendor/bin/em_hidl
+vendor/etc/init/em_hidl_user.rc
+vendor/lib/libaudiotoolkit_vendor.so
+vendor/lib64/libaudiotoolkit_vendor.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so
 
 # Mediatek
--framework/mediatek-common.jar
--framework/mediatek-framework.jar
--framework/mediatek-ims-base.jar
--framework/mediatek-ims-common.jar
--framework/mediatek-ims-extension-plugin.jar
--framework/mediatek-services.jar
--framework/mediatek-telecom-common.jar
--framework/mediatek-telephony-base.jar
--framework/mediatek-telephony-common.jar
+-system/framework/mediatek-common.jar
+-system/framework/mediatek-framework.jar
+-system/framework/mediatek-ims-base.jar
+-system/framework/mediatek-ims-common.jar
+-system/framework/mediatek-ims-extension-plugin.jar
+-system/framework/mediatek-services.jar
+-system/framework/mediatek-telecom-common.jar
+-system/framework/mediatek-telephony-base.jar
+-system/framework/mediatek-telephony-common.jar
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
 vendor/bin/dconfig
 vendor/bin/dexecutor

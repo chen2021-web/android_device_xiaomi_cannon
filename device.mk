@@ -78,6 +78,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
@@ -90,6 +92,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.common@5.0.vendor \
     android.hardware.audio.common@7.0-util.vendor \
     android.hardware.audio.effect@7.0-impl:32 \
+    android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.soundtrigger@2.3.vendor \
     android.hardware.soundtrigger@2.0-core:32 \
     android.hardware.soundtrigger@2.3-impl:32 \
@@ -107,6 +110,9 @@ PRODUCT_PACKAGES += \
     MtkInCallService
 
 # Bluetooth
+PRODUCT_PACKAGES += \
+    audio.bluetooth.default
+
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor
 
@@ -272,6 +278,11 @@ PRODUCT_BOOT_JARS += \
     mediatek-ims-base
 
 # Power
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/power/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml \
+    $(LOCAL_PATH)/configs/power/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
+    $(LOCAL_PATH)/configs/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml
+
 PRODUCT_PACKAGES += \
     android.hardware.power-V1.vendor \
     android.hardware.power-service-mediatek \
@@ -337,12 +348,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl \
     android.hardware.gnss@2.1.vendor
-
-# Perf
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/perf/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml \
-    $(LOCAL_PATH)/configs/perf/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
-    $(LOCAL_PATH)/configs/perf/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml
 
 # Public libraries
 PRODUCT_COPY_FILES += \
